@@ -1,4 +1,5 @@
 import { Product, ProductFamily } from './types';
+import { getCached, setCache } from './cache';
 
 export const products: Product[] = [
   // Assentos
@@ -254,21 +255,39 @@ export const families: ProductFamily[] = [
 ];
 
 export function getProductsByFamily(family: ProductFamily): Product[] {
-  return products.filter(p => p.family === family);
+  const cacheKey = `family:${family}`;
+  const cached = getCached<Product[]>(cacheKey);
+  if (cached) return cached;
+  
+  const result = products.filter(p => p.family === family);
+  setCache(cacheKey, result);
+  return result;
 }
 
 export function getProductById(id: string): Product | undefined {
-  return products.find(p => p.id === id);
+  const cacheKey = `product:${id}`;
+  const cached = getCached<Product | undefined>(cacheKey);
+  if (cached !== null) return cached;
+  
+  const result = products.find(p => p.id === id);
+  setCache(cacheKey, result);
+  return result;
 }
 
 export function searchProducts(query: string): Product[] {
   const lowerQuery = query.toLowerCase().trim();
   if (!lowerQuery) return products;
   
-  return products.filter(p => 
+  const cacheKey = `search:${lowerQuery}`;
+  const cached = getCached<Product[]>(cacheKey);
+  if (cached) return cached;
+  
+  const result = products.filter(p => 
     p.name.toLowerCase().includes(lowerQuery) ||
     p.category.toLowerCase().includes(lowerQuery) ||
     p.description.toLowerCase().includes(lowerQuery) ||
     p.family.toLowerCase().includes(lowerQuery)
   );
+  setCache(cacheKey, result);
+  return result;
 }
