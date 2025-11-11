@@ -51,13 +51,13 @@ export default function ProdutoPage() {
   return (
     <div className="container">
       <nav style={{ marginTop: '16px', marginBottom: '24px' }}>
-        <Link href="/" style={{ color: '#1976d2', textDecoration: 'none' }}>
+        <Link href="/" style={{ color: '#003399', textDecoration: 'none' }}>
           Início
         </Link>
         {' > '}
         <Link 
           href={`/produtos/${encodeURIComponent(product.family)}`}
-          style={{ color: '#1976d2', textDecoration: 'none' }}
+          style={{ color: '#003399', textDecoration: 'none' }}
         >
           {product.family}
         </Link>
@@ -155,11 +155,11 @@ export default function ProdutoPage() {
         }
 
         .thumbnail:hover {
-          border-color: #1976d2;
+          border-color: #003399;
         }
 
         .thumbnail.active {
-          border-color: #1976d2;
+          border-color: #003399;
         }
 
         .thumbnail img {
@@ -176,9 +176,9 @@ export default function ProdutoPage() {
         .product-family-badge {
           display: inline-block;
           font-size: 14px;
-          font-weight: 600;
-          color: #1976d2;
-          background: #e3f2fd;
+          font-weight: 400;
+          color: #003399;
+          background: #f7f7f7;
           padding: 6px 12px;
           border-radius: 4px;
           margin-bottom: 16px;
@@ -187,7 +187,7 @@ export default function ProdutoPage() {
 
         .product-title {
           font-size: 32px;
-          font-weight: 700;
+          font-weight: 400;
           color: #212121;
           margin: 0 0 8px 0;
         }
@@ -204,7 +204,7 @@ export default function ProdutoPage() {
 
         .product-description h2 {
           font-size: 20px;
-          font-weight: 600;
+          font-weight: 400;
           margin-bottom: 12px;
           color: #212121;
         }

@@ -15,7 +15,7 @@ body {
 }
 
 body {
-  background: #fafafa;
+  background: #f7f7f7;
 }
 
 main {
@@ -30,7 +30,7 @@ main {
 
 .page-title {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 400;
   color: #212121;
   margin: 32px 0 16px 0;
 }
@@ -53,14 +53,26 @@ main {
 }
 
 .search-box:focus {
-  border-color: #1976d2;
+  border-color: #003399;
 }
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .btn {
@@ -77,12 +89,12 @@ main {
 }
 
 .btn-primary {
-  background: #1976d2;
+  background: #003399;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1565c0;
+  background: #002266;
 }
 
 .btn-success {
@@ -96,12 +108,12 @@ main {
 
 .btn-outline {
   background: white;
-  color: #1976d2;
-  border: 2px solid #1976d2;
+  color: #003399;
+  border: 2px solid #003399;
 }
 
 .btn-outline:hover {
-  background: #e3f2fd;
+  background: #f7f7f7;
 }
 
 .families-grid {
@@ -117,18 +129,18 @@ main {
   text-align: center;
   background: white;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   color: #212121;
   transition: all 0.2s;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
 }
 
 .family-card:hover {
-  border-color: #1976d2;
+  border-color: #003399;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 51, 153, 0.15);
 }
 
 .pagination {
@@ -151,8 +163,8 @@ main {
 }
 
 .pagination button:hover:not(:disabled) {
-  border-color: #1976d2;
-  color: #1976d2;
+  border-color: #003399;
+  color: #003399;
 }
 
 .pagination button:disabled {
@@ -188,11 +200,6 @@ main {
   
   .page-subtitle {
     font-size: 16px;
-  }
-  
-  .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
   }
   
   .families-grid {

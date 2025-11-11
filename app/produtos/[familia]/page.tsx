@@ -41,7 +41,7 @@ export default function ProdutosFamiliaPage() {
   return (
     <div className="container">
       <nav style={{ marginTop: '16px', marginBottom: '24px' }}>
-        <Link href="/" style={{ color: '#1976d2', textDecoration: 'none' }}>
+        <Link href="/" style={{ color: '#003399', textDecoration: 'none' }}>
           Início
         </Link>
         {' > '}
