@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #212121;
+  color: #1a1a1a;
 }
 
 body {
@@ -20,6 +20,16 @@ body {
 
 main {
   min-height: calc(100vh - 200px);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -31,13 +41,13 @@ main {
 .page-title {
   font-size: 32px;
   font-weight: 400;
-  color: #212121;
+  color: #1a1a1a;
   margin: 32px 0 16px 0;
 }
 
 .page-subtitle {
   font-size: 18px;
-  color: #757575;
+  color: #616161;
   margin-bottom: 32px;
 }
 
@@ -61,6 +71,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 32px 0;
+  grid-auto-rows: 1fr;
 }
 
 @media (max-width: 1024px) {
@@ -84,7 +95,7 @@ main {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
   text-align: center;
 }
 
@@ -95,6 +106,7 @@ main {
 
 .btn-primary:hover {
   background: #002266;
+  transform: translateY(-1px);
 }
 
 .btn-success {
@@ -104,6 +116,7 @@ main {
 
 .btn-success:hover {
   background: #22c55e;
+  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -114,6 +127,7 @@ main {
 
 .btn-outline:hover {
   background: #f7f7f7;
+  transform: translateY(-1px);
 }
 
 .families-grid {
@@ -131,10 +145,11 @@ main {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
   text-decoration: none;
-  color: #212121;
-  transition: all 0.2s;
+  color: #1a1a1a;
+  transition: all 0.2s ease-out;
   font-weight: 400;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .family-card:hover {
@@ -159,12 +174,13 @@ main {
   border-radius: 4px;
   background: white;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 }
 
 .pagination button:hover:not(:disabled) {
   border-color: #003399;
   color: #003399;
+  transform: translateY(-1px);
 }
 
 .pagination button:disabled {
@@ -174,7 +190,7 @@ main {
 
 .pagination span {
   font-size: 14px;
-  color: #757575;
+  color: #616161;
 }
 
 .empty-state {
@@ -184,13 +200,13 @@ main {
 
 .empty-state h2 {
   font-size: 24px;
-  color: #757575;
+  color: #616161;
   margin-bottom: 16px;
 }
 
 .empty-state p {
   font-size: 16px;
-  color: #9e9e9e;
+  color: #757575;
 }
 
 @media (max-width: 768px) {

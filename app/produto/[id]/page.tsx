@@ -107,7 +107,12 @@ export default function ProdutoPage() {
         <div className="gallery">
           <div className="main-image-container">
             <div className="main-image" onClick={openLightbox}>
-              <img src={product.photos[selectedPhoto]} alt={product.name} />
+              <img 
+                src={product.photos[selectedPhoto]} 
+                alt={product.name}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             {product.photos.length > 1 && (
               <>
@@ -128,7 +133,12 @@ export default function ProdutoPage() {
                   className={`thumbnail ${index === selectedPhoto ? 'active' : ''}`}
                   onClick={() => setSelectedPhoto(index)}
                 >
-                  <img src={photo} alt={`${product.name} - foto ${index + 1}`} />
+                  <img 
+                    src={photo} 
+                    alt={`${product.name} - foto ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </button>
               ))}
             </div>
@@ -163,7 +173,12 @@ export default function ProdutoPage() {
         <div className="lightbox" onClick={closeLightbox}>
           <button className="lightbox-close" onClick={closeLightbox}>✕</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={product.photos[selectedPhoto]} alt={product.name} />
+            <img 
+              src={product.photos[selectedPhoto]} 
+              alt={product.name}
+              loading="lazy"
+              decoding="async"
+            />
             {product.photos.length > 1 && (
               <>
                 <button className="lightbox-arrow lightbox-arrow-left" onClick={prevPhoto}>
@@ -223,7 +238,7 @@ export default function ProdutoPage() {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(0, 51, 153, 0.8);
+          background: rgba(0, 51, 153, 0.9);
           color: white;
           border: none;
           width: 48px;
@@ -231,7 +246,7 @@ export default function ProdutoPage() {
           border-radius: 50%;
           font-size: 24px;
           cursor: pointer;
-          transition: background 0.2s;
+          transition: all 0.2s ease-out;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -240,6 +255,7 @@ export default function ProdutoPage() {
 
         .nav-arrow:hover {
           background: rgba(0, 51, 153, 1);
+          transform: translateY(-50%) scale(1.05);
         }
 
         .nav-arrow-left {
@@ -302,13 +318,13 @@ export default function ProdutoPage() {
         .product-title {
           font-size: 32px;
           font-weight: 400;
-          color: #212121;
+          color: #1a1a1a;
           margin: 0 0 8px 0;
         }
 
         .product-category-text {
           font-size: 18px;
-          color: #757575;
+          color: #616161;
           margin-bottom: 24px;
         }
 
@@ -323,13 +339,13 @@ export default function ProdutoPage() {
           font-size: 20px;
           font-weight: 400;
           margin-bottom: 12px;
-          color: #212121;
+          color: #1a1a1a;
         }
 
         .product-description p {
           font-size: 16px;
           line-height: 1.6;
-          color: #424242;
+          color: #3a3a3a;
         }
 
         .whatsapp-buttons {
